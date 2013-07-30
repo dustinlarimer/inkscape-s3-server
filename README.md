@@ -15,7 +15,7 @@ Configure S3
     export AWS_ACCESS_KEY_ID=<your aws access key id>
     export AWS_SECRET_ACCESS_KEY=<your aws secret access key>
     export AWS_BUCKET_NAME=<bucket name for rendered artifacts>
-    export PORT=<####>
+    export PORT=<#### or default of 4444 will be used>
 
 Deploy to DigitalOcean
 -----
