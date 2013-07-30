@@ -43,14 +43,14 @@ app.post('/', function(req, res, next){
 					console.log('PNG saved to Amazon S3');
 					result.resume();
 					result.on('end', function(){
-						console.log('Connection closed')
-						fs.unlink(svg_path, function (err) {
+						console.log('Connection closed');
+						/*fs.unlink(svg_path, function (err) {
 							if (err) throw err;
 							fs.unlink(png_path, function (err) {
 								if (err) throw err;
 								return;
 							});
-						});
+						});*/
 					});
 				});
 			});
