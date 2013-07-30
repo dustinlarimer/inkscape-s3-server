@@ -69,7 +69,7 @@ app.post('/', function(req, res, next){
 	
 })
 
-var port = process.env.PORT || 4444
+var port = process.env.['PORT'] || 4444
 exports.startServer = function() {
   console.log('Launching Inkscape on port ' + port);
   return app.listen(port);
