@@ -40,18 +40,20 @@ app.post('/', function(req, res, next){
 				if (err) console.log(err);
 				client.putFile(png_path, png_name, { 'Content-Type' : 'image/png' }, function (err, result) {
 					if (err) console.log(err);
-					console.log('PNG saved to Amazon S3');
-					result.resume();
-					result.on('end', function(){
-						console.log('Connection closed');
-						fs.unlink(svg_path, function (err) {
-							if (err) console.log(err);
-							fs.unlink(png_path, function (err) {
+					if (result){
+						console.log('PNG saved to Amazon S3');
+						result.resume();
+						result.on('end', function(){
+							console.log('Connection closed');
+							fs.unlink(svg_path, function (err) {
 								if (err) console.log(err);
-								return;
+								fs.unlink(png_path, function (err) {
+									if (err) console.log(err);
+									return;
+								});
 							});
 						});
-					});
+					}
 				});
 			});
 		});
