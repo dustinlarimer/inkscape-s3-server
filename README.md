@@ -17,4 +17,4 @@ Configure S3
 
 Deploy to DigitalOcean
 -----
-    ...
+    ..
