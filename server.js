@@ -44,24 +44,13 @@ app.post('/', function(req, res, next){
 					result.resume();
 					result.on('end', function(){
 						console.log('Connection closed');
-						
-						fs.readFile(svg_path, function(err, file){
-							fs.unlink(svg_path, function(err){
-								fs.readFile(svg_path, function(err, file){
-									fs.unlink(png_path, function (err) {
-										if (err) throw err;
-										return;
-									});
-								})
-							})
-						})
-						/*fs.unlink(svg_path, function (err) {
+						fs.unlink(svg_path, function (err) {
 							if (err) throw err;
 							fs.unlink(png_path, function (err) {
 								if (err) throw err;
 								return;
 							});
-						});*/
+						});
 					});
 				});
 			});
