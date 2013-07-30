@@ -33,21 +33,21 @@ app.post('/', function(req, res, next){
 	var svg_source = svg_doctype + svg_decoded
 
 	var temp_svg = fs.writeFile(svg_path, svg_source, function(err){
-		if (err) throw err;
+		if (err) console.log(err);
 		var writable = fs.createWriteStream(png_path);
 		writable.on('close', function(){
 			var temp_png = fs.readFile(png_path, function(err, file){
-				if (err) throw err;
+				if (err) console.log(err);
 				client.putFile(png_path, png_name, { 'Content-Type' : 'image/png' }, function (err, result) {
-					if (err) throw err;
+					if (err) console.log(err);
 					console.log('PNG saved to Amazon S3');
 					result.resume();
 					result.on('end', function(){
 						console.log('Connection closed');
 						fs.unlink(svg_path, function (err) {
-							if (err) throw err;
+							if (err) console.log(err);
 							fs.unlink(png_path, function (err) {
-								if (err) throw err;
+								if (err) console.log(err);
 								return;
 							});
 						});
