@@ -1,0 +1,20 @@
+{
+	  "name": "Inkscape-SVG-to-PNG"
+	, "description": ""
+	, "version": "0.0.1"
+	, "author": "Dustin Larimer <dustinlarimer@gmail.com> (http://github.com/dustinlarimer)"
+	, "engines": {
+		    "node"		: "0.10.15"
+    	, "npm"			: "1.3.6"
+	}
+	, "scripts": {
+		  "start": "./node_modules/.bin/nodemon server.js"
+	}
+	, "dependencies": {
+		  "express"		: "latest"
+		, "inkscape"  : "latest"
+		, "nodemon"		: "latest"
+		, "stream"    : "latest"
+		, "knox"      : "latest"
+	}
+}

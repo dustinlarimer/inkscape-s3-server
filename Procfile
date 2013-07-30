@@ -1,1 +1,1 @@
-web: phantomjs app.coffee
+web: node server.js
