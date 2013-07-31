@@ -1,6 +1,12 @@
 Inkscape: SVG → PNG → S3
 ========================
 
+This project is just a few days old and I would love all the help you can offer to tighten this thing up.
+
+File reading and writing is pretty wonky (just learning as I go, eager to better understand streams and asynchronicity), and fully detached from the POST response.
+
+I built this to generate crisp PNGs (and potentially PDF, EPS, plus other image formats) from complex D3.js visualizations. Ideally these would be used as visualization previews, embedded in emails, or served as low-fidelity alternate content. Alternate methods that I tried (phantom.js, canvg) had severely limited SVG spec coverage, resulting in broken, partially rendered artifacts. So here we are! Help me stabilize this beast!
+
 Create a new Droplet on DigitalOcean
 -----
 
