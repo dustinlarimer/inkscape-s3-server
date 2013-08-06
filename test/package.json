@@ -1,0 +1,16 @@
+{
+	  "name": "Inkscape-SVG-to-PNG-test"
+	, "description": ""
+	, "version": "0.0.1"
+	, "author": "Dustin Larimer <dustinlarimer@gmail.com> (http://github.com/dustinlarimer)"
+	, "engines": {
+		    "node"		: "0.10.15"
+    	, "npm"			: "1.3.6"
+	}
+	, "scripts": {
+	}
+	, "dependencies": {
+		  "request"		: "latest"
+	},
+  "private":true
+}
